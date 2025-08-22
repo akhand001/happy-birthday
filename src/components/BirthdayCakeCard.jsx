@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 export default function BirthdayCakeCard() {
   return (
-    <div className="flex items-center justify-center -h-screen bg">
-      <div className="text-center">
+    <div className="flex items-center justify-center h-screen bg-white px-2">
+      <div className="text-center w-full max-w-md">
         {/* Top Text */}
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl font-hand text-gray-800 m-0 p-0"
+          className="text-2xl sm:text-4xl font-hand text-gray-800"
         >
           Happy birthday <span className="text-pink-500">&lt;3</span>
         </motion.h1>
@@ -19,9 +19,8 @@ export default function BirthdayCakeCard() {
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 300 250"
-          width="800"
-          height="250"
-          className="mx-auto"
+          className="mx-auto w-full max-w-xs sm:max-w-sm"
+          preserveAspectRatio="xMidYMid meet"
         >
           {/* Left Person */}
           <circle cx="70" cy="80" r="20" stroke="black" strokeWidth="3" fill="none" />
@@ -81,21 +80,20 @@ export default function BirthdayCakeCard() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="p-0 m-0"
         >
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-3">
             {["❤️", "💖", "💕"].map((heart, i) => (
               <motion.span
                 key={i}
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5, delay: i * 0.3 }}
-                className="text-pink-400 text-2xl"
+                className="text-pink-400 text-xl sm:text-2xl"
               >
                 {heart}
               </motion.span>
             ))}
           </div>
-          <h2 className="text-xl font-hand text-gray-800">ily</h2>
+          <h2 className="text-lg sm:text-xl font-hand text-gray-800">ily</h2>
         </motion.div>
       </div>
 
